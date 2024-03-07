@@ -1,5 +1,14 @@
-import Image from "next/image";
+"use client";
+
+import { useAtomValue } from "jotai";
+import { helloAtom } from "./_store";
 
 export default function Home() {
-  return <>hello world</>;
+  const hello = useAtomValue(helloAtom);
+  return (
+    <>
+      hello world <br />
+      {hello}
+    </>
+  );
 }
